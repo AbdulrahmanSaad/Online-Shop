@@ -4,10 +4,10 @@ const path = require('path')
 
 app.use(express.static(path.join(__dirname, 'assets')))
 app.set('view engine', 'ejs')
-app.set('views', 'views') // default value
+app.set('views', 'Views')
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.render('Index')
 })
 
 app.listen(3000, () => {
