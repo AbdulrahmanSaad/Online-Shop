@@ -19,6 +19,14 @@ exports.postSignup = (req, res, next) => {
     })
 }
 
-exports.getLogin = (req, res, next) => {
-    // res.render("Login")
+exports.postLogin = (req, res, next) => {
+    const {
+        email,
+        password
+    } = req.body
+    authModel.postLogin(email, password).then((token) => {
+        res.json({
+            token
+        })
+    })
 }

@@ -10,6 +10,9 @@ router.post(
     authController.postSignup
     )
 
-// router.getLogin('/login', authController.getLogin)
+router.post(
+    '/login', 
+    bodyParser.urlencoded({extended: true}),
+    authController.postLogin)
 
 module.exports = router
